@@ -4,9 +4,12 @@ import DishSlice from '../src/Slice/DishSlice'
 const loadCartDishFromLS = () => {
   try {
     const cartData = localStorage.getItem('cartDish');
-    return cartData ? JSON.parse(cartData) : [];
+      return cartData ? JSON.parse(cartData).map(item => ({
+      ...item,
+      quantity: item.quantity || 1
+    })) : [];
   } catch (error) {
-    console.error('Not Found Any Data in LocalStorage', error);
+    console.error('Error loading CartItem:', error);
     return [];
   }
 };
@@ -15,7 +18,7 @@ const loadWishDishFromLS = () => {
     const cartData = localStorage.getItem('wishDish');
     return cartData ? JSON.parse(cartData) : [];
   } catch (error) {
-    console.error('Not Found Any Data in LocalStorage', error);
+        console.error('Error loading wishlist:', error);
     return [];
   }
 };

@@ -1,37 +1,50 @@
 import React from 'react';
 import '../CSS/Cart.css'
-import { useSelector } from 'react-redux';
-import { MdAdd } from "react-icons/md";
-import { TiMinus } from "react-icons/ti";
+import { useDispatch, useSelector } from 'react-redux';
+import { AddToCart, RemoveToWishItem } from '../Slice/DishSlice';
+
 
 const Wish = () => {
-    const WishList = useSelector(state => state.allDish.wish)
+    const WishList = useSelector(state => state.allDish.wish);
+    const dispatch = useDispatch();
 
-    const allWishList = WishList.map((key, index) => {
+    const allWishList = WishList.map((item, index) => {
         return (
             <>
 
-                <div className="menu-item">
+                <div className="menu-item" key={index}>
                     <div className="item-image">
-                        <img src={key.image} alt={`${key.name} image`} />
+                        <img src={item.image} alt={`${item.name} image`} />
                     </div>
                     <div className="item-details">
-                        <h3>{key.name}</h3>
-                        <span className="item-price">₹{key.price}</span>
+                        <h3>{item.name}</h3>
+                        <span className="item-price">₹{item.price*item.quantity}</span>
                     </div>
                     <div className="item-controls">
                         <div className="quantity-selector">
-                             <button className='inc-dic'><TiMinus className='incdec-scale'/></button>
-                                          <input type="text" value="1" readOnly />
-                                          <button className='inc-dic'><MdAdd className='incdec-scale'/></button>
+                    
+                            <span style={{marginLeft:"50px",fontSize:"1.4rem"}}>{item.quantity}</span>
+    
                         </div>
                         <div className="item-total">
-                            <button 
-                            className="add-to--cart"
-                           >Add To Cart</button>
-                            <button 
-                            className='wish-remove--btn'
-                           >Remove</button>
+                            <button
+                                className="add-to--cart"
+                                onClick={() => {
+                                    dispatch(AddToCart({
+                                        id: item.id,
+                                        name: item.name,
+                                        price: item.price,
+                                        discount: item.discount,
+                                        discription: item.discription,
+                                        image: item.image,
+                                        quantity:item.quantity
+                                    }))
+                                }}
+                            >Add To Cart</button>
+                            <button
+                                className='wish-remove--btn'
+                                onClick={() => { dispatch(RemoveToWishItem(item.id)) }}
+                            >Remove</button>
                         </div>
                     </div>
                 </div>

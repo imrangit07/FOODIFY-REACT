@@ -1,0 +1,84 @@
+.swiper-container {
+    margin: 0rem 2rem;
+}
+
+.dish-swip {
+    min-height: 200px;
+    padding: 100px 10px 10px 10px;
+    text-align: center;
+    display: flex;
+}
+
+
+.dish-card-back {
+    /* padding:12px 0; */
+    background-color: #fff;
+
+}
+
+.dish-detail {
+    min-width: 210px;
+    border-radius: 25px;
+    background-color: #ffa2000b;
+    padding: 80px 10px 20px 10px;
+    position: relative;
+}
+
+.dish-image-wrapper {
+    /* border: 2px dotted #e05f5f; */
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -80px;
+    right: 30px;
+    z-index: 888;
+}
+
+.circle-images1 {
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 888;
+    animation: rotate infinite linear 20s;
+}
+
+@keyframes rotate {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+.dish-image {
+    height: auto;
+    border-radius: 50%;
+    z-index: 888;
+}
+
+.dish-title {
+    font-weight: 700;
+    color: #0c0c0c;
+    margin: 0;
+}
+
+.dish-subtitle {
+    font-size: 14px;
+    color: #888;
+    margin: 5px 0;
+}
+
+.dish-price {
+    margin-top: 10px;
+    color: #e60000;
+    font-weight: 700;
+    font-size: 18px;
+}
