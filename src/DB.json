@@ -1,0 +1,84 @@
+{
+    "Items": [
+        {
+            "id": "item1",
+            "name": "Chicken Fried Rice",
+            "price": 250.99,
+            "discount": 30,
+            "discription": "hellowresh Pizza",
+            "image": "Images/dishes1/dishes1_1.png"
+        },
+        {
+            "id": "item2",
+            "name": "Chinese Pasta",
+            "price": 149.99,
+            "discount": 30,
+            "discription": "hellowresh Pizza",
+            "image": "Images/dishes1/dishes1_2.png"
+        },
+        {
+            "id": "item3",
+            "name": "Chicken Pizza",
+            "price": 299.99,
+            "discount": 60,
+            "discription": "hellowresh Pizza",
+            "image": "Images/dishes1/dishes1_3.png"
+        },
+        {
+            "id": "item4",
+            "name": "Chicken Noodles",
+            "price": 499.00,
+            "discount": 30,
+            "discription": "hellowresh Pizza",
+            "image": "Images/dishes1/dishes1_4.png"
+        },
+        {
+            "id": "item5",
+            "name": "Grilled Chicken",
+            "price": 350.99,
+            "discount": 50,
+            "discription": "hellowresh Pizza",
+            "image": "Images/dishes1/dishes1_5.png"
+        },
+        {
+            "id": "item6",
+            "name": "Chicken Fried Rice",
+            "price": 200.99,
+            "discount": 30,
+            "discription": "hellowresh Pizza",
+            "image": "Images/dishes1/dishes1_1.png"
+        },
+        {
+            "id": "item7",
+            "name": "Chinese Pasta",
+            "price": 399.99,
+            "discount": 30,
+            "discription": "hellowresh Pizza",
+            "image": "Images/dishes1/dishes1_2.png"
+        },
+        {
+            "id": "item8",
+            "name": "Chicken Pizza",
+            "price": 250.99,
+            "discount": 30,
+            "discription": "hellowresh Pizza",
+            "image": "Images/dishes1/dishes1_3.png"
+        },
+        {
+            "id": "item9",
+            "name": "Chicken Noodles",
+            "price": 299.99,
+            "discount": 30,
+            "discription": "hellowresh Pizza",
+            "image": "Images/dishes1/dishes1_4.png"
+        },
+        {
+            "id": "item1",
+            "name": "Grilled Chicken",
+            "price": 250.99,
+            "discount": 30,
+            "discription": "hellowresh Pizza",
+            "image": "Images/dishes1/dishes1_5.png"
+        }
+    ]
+}

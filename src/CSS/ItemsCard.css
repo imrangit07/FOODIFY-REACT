@@ -1,0 +1,138 @@
+/* This is for THEMES */
+:root {
+  --main-color: #d90b22;
+  --main-color-light: rgba(75, 49, 236, .5);
+  --second-main--color: #e4002b;
+  --third-main--color: rgb(238, 142, 30);
+  --second-bg--color: #f4f2eb;
+  --white-color: white;
+  --second-white--color: rgb(241, 245, 255);
+
+}
+
+.dishes-section {
+  padding: 2rem;
+  text-align: center;
+  background: var(--second-bg--color);
+
+}
+
+.header .tag {
+  color: var(--third-main--color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0 2rem;
+}
+
+.dishes-container {
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.dish-card {
+  width: 240px;
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.card-blur{
+    padding: 1rem;
+  border-radius: 1rem;
+}
+
+.dish-card-bg {
+  background-color: var(--white-color);
+}
+
+.dish-card-img {
+  background-image: url("../Images/cardBgImg.jpeg");
+  background-color: #000;
+  
+}
+
+
+.heart-icon {
+  background-color: var(--main-color);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: var(--white-color);
+}
+
+.bag-icon,
+.eye-icon {
+  background-color: var(--white-color);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  font-size: 1.5rem;
+
+}
+
+.bag-icon {
+  right: 1rem;
+}
+
+.eye-icon {
+  top: 24rem;
+  right: 1rem;
+}
+.bag-icon:hover,.eye-icon:hover{
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+.dish-image {
+  width: 130px;
+  height: 130px;
+  object-position: center;
+  object-fit: cover;
+  margin: 1.5rem auto;
+  /* padding: 1rem; */
+  border-radius: 50%;
+}
+
+.dish-name {
+  margin-bottom: 1.2rem;
+  margin-top: 1rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.subtext {
+  font-size: 1.5rem;
+  color: #777;
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--second-main--color);
+  margin-top: .8rem;
+}
+
+
+.dish-card--onMEnter {
+  background-color: #000;
+}

@@ -1,0 +1,264 @@
+/* This is for BASE rulse */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--second-white--color);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+/* This is for THEMES */
+:root {
+  --main-color: #d90b22;
+  --main-color-light: rgba(75, 49, 236, .5);
+  --second-main--color: rgb(190, 116, 201);
+  --third-main--color: rgb(238, 142, 30);
+  --main-white--color: #fff;
+  --second-white--color: rgb(241, 245, 255);
+}
+
+/* This is for LAYOUTS */
+.container {
+  padding: 1rem 2rem .2rem 2rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--third-main--color);
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+  min-height: 40px;
+}
+
+
+
+/* This is for NAVBAR section */
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  width: 100%;
+  background-color: var(--main-white--color);
+  padding: .8rem 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--main-black--color);
+  position: fixed;
+  top: 0;
+  z-index:999;
+
+  & li {
+    list-style: none;
+    text-align: center;
+    color: var(--main-color);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Container to crop the video */
+.video-crop-container {
+  width: 180px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Video styling */
+.nav-logo video {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  position: absolute;
+  top: 60%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: auto;
+}
+
+.nav-search--input {
+  background-color: var(--second-white--color);
+  width: 40%;
+  text-align: center;
+  gap: 1rem;
+  font-size: 2rem;
+  color: var(--main-color);
+
+
+}
+
+.nav-search--input input::placeholder {
+  color:hsla(0, 0%, 0%, 0.5);
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  opacity: .8;
+}
+
+.search {
+  width: 90%;
+  padding: .5rem 0 .5rem .5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+}
+
+.nav-items ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 4.5rem;
+  font-size: 2rem;
+}
+
+.login-li {
+  cursor: pointer;
+  transition: scale ease .5s;
+}
+.cart-li{
+  cursor: pointer;
+}
+
+/* Very small devices */
+@media (max-width: 320px) {
+  .form-container {
+    padding: 20px 12px;
+    padding-top: 70px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    padding: 12px;
+  }
+}
+
+
+@media (max-width:1150px) {
+  .navbar {
+    padding: 1rem 4rem;
+  }
+
+  .nav-search--input {
+    gap: .5rem;
+  }
+
+  .nav-search--input input::placeholder {
+    font-size: 1rem;
+  }
+
+  .nav-items ul {
+    gap: 2.5rem;
+    /* font-size: 1rem; */
+  }
+
+}
+
+.like-li,
+.cart-li {
+  cursor: pointer;
+
+  position: relative;
+  transition: scale ease .5s;
+}
+.like-li:hover,
+.cart-li:hover,
+.login-li:hover{
+ scale: 1.1;
+}
+.like-count,
+.cart-count {
+  background-color: var(--third-main--color);
+  position: absolute;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  top: 15px;
+  left: -10px;
+  color:var(--main-white--color);
+  font-weight: 600;
+
+}
+
+@media (max-width:750px) {
+  .navbar {
+    padding: 1rem 2rem;
+    justify-content: space-between;
+  }
+
+  .video-crop-container {
+    height: 30px;
+    width: 150px;
+  }
+
+  .nav-logo video {
+    width: 250px;
+  }
+
+  .nav-search--input {
+    position: absolute;
+    top: 6.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    border-radius: 10rem;
+    padding: 0 1rem;
+    background-color: var(--main-white--color);
+  }
+
+  .search {
+    padding: 1.2rem 0 1.2rem .5rem;
+  }
+
+}
+
+@media (max-width:450px) {
+
+  .navbar {
+    padding: .6rem;
+  }
+
+  .nav-search--input {
+    top: 5.5rem;
+  }
+}
+
+@media (max-width:350px) {
+  .nav-items ul {
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+}
