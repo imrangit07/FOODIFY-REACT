@@ -25,7 +25,7 @@ const dishes = [
     { image: img7, name: 'Chicken Rice', price: 400.99 },
     { image: img8, name: 'Spatial Barger', price: 200.99 },
     { image: img9, name: 'Vege Burger', price: 260.99 },
-    { image: img10, name: 'Brief Chicken', price: 190.99 },
+    { image: img10, name:'Brief Chicken', price: 190.99 },
 ];
 
 const SwiperSection = () => {
@@ -38,7 +38,7 @@ const SwiperSection = () => {
                     slidesPerView={6}
                     autoplay={{
                         delay: 4000,
-                        //   disableOnInteraction: true,
+                          disableOnInteraction: false,
                     }}
                     loop={true}
                 >
