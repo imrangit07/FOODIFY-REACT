@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from 'react-toastify';
+
 
 const DishSlice = createSlice({
     name: 'allDish',
@@ -9,14 +11,28 @@ const DishSlice = createSlice({
     reducers: {
         AddToCart: (state, action) => {
             const newItem = action.payload;
-            const existingItem = state.dish.find(item => item.id === newItem.id);
+            const existingItem = state.dish.some(item => item.id === newItem.id);
 
             if (existingItem) {
-                existingItem.quantity += 1;
+                // existingItem.quantity += 1;
+                toast.info("Already in cart! 🛒", {
+                    style: {
+                        fontSize: '16px',
+                    },
+                });
+
             } else {
                 state.dish.push({ ...newItem, quantity: 1 });
+
+                toast.success("Added to Crt! 🍕", {
+                    style: {
+                        fontSize: '16px',
+                    },
+                });
             }
             localStorage.setItem("cartDish", JSON.stringify(state.dish));
+
+
 
         },
         addRemoveQuantity: (state, action) => {
@@ -43,6 +59,12 @@ const DishSlice = createSlice({
 
             localStorage.setItem("cartDish", JSON.stringify(state.dish));
 
+            toast.warn("Removed From Cart! 🍔", {
+                style: {
+                    fontSize: '16px',
+                },
+            });
+
         },
 
         AddToWishList: (state, action) => {
@@ -50,11 +72,23 @@ const DishSlice = createSlice({
             const existingWish = state.wish.some(item => item.id === newItem.id);
 
             if (existingWish) {
-                existingWish.quantity += 1;
+                toast.info("Already in Cart! 🛒", {
+                    style: {
+                        fontSize: '16px',
+                    },
+                });
             } else {
                 state.wish.push({ ...newItem, quantity: 1 });
+
+                toast.success("Added to Wishlist! 😋", {
+                    style: {
+                        fontSize: '16px',
+                    },
+                });
             }
             localStorage.setItem("wishDish", JSON.stringify(state.wish));
+
+
         },
         RemoveToWishItem: (state, action) => {
             const itemId = action.payload;
@@ -62,6 +96,12 @@ const DishSlice = createSlice({
             state.wish = state.wish.filter(item => item.id !== itemId);
 
             localStorage.setItem("wishDish", JSON.stringify(state.wish));
+
+            toast.warn("emoved From Cart! 🍔", {
+                style: {
+                    fontSize: '16px',
+                },
+            });
 
         },
     }

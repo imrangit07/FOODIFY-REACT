@@ -184,6 +184,7 @@
   @media (max-width: 480px) {
     .footer-container {
       grid-template-columns: 1fr;
+      margin-left: 10px;
     }
     
     .legal-links {

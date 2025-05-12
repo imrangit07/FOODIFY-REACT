@@ -64,10 +64,11 @@
     z-index: 888;
 }
 
-.dish-title {
+.dish-swiper--title {
     font-weight: 700;
     color: #0c0c0c;
     margin: 0;
+    font-size: 18px;
 }
 
 .dish-subtitle {
