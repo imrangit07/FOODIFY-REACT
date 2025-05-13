@@ -2,7 +2,8 @@ import { BrowserRouter,Routes,Route } from "react-router-dom"
 import Layout from "./Layout"
 import Home from "./Pages/Home"
 import Cart from "./Pages/Cart"
-import Wish from "./Pages/Wish"
+import Wish from "./Pages/Wish";
+import NotFound from "./Pages/NotFound";
 
 const App = () => {
   return (
@@ -14,6 +15,9 @@ const App = () => {
       <Route path="home" element={<Home />}/>
       <Route path="cart" element={<Cart />}/>
       <Route path="wish" element={<Wish />}/>
+
+
+      <Route path="*" element={<NotFound />}/>
       
       </Route>
     </Routes>

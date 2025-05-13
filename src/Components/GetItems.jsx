@@ -11,6 +11,10 @@ import { AddToCart } from '../Slice/DishSlice';
 import { AddToWishList } from '../Slice/DishSlice';
 import { useDispatch } from 'react-redux';
 
+
+import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.png'
+import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.png'
+
 import Details from '../Pages/details';
 const GetItems = () => {
   const [dishes, setDishes] = useState([]);
@@ -171,11 +175,24 @@ const GetItems = () => {
   return (
     <>
       <section className="dishes-section">
+       <div className='popular-shape'>
+        <img src={popularDishesShape1_2} alt="" />
+       </div>
         <div className="header">
           <span className="tag">🔥 POPULAR DISHES 🔥</span>
           <h2>Best Selling Dishes</h2>
         </div>
         <div className="dishes-container">{allDishes}</div>
+
+        <div  style={{
+           textAlign:"left",
+            // background:"red",
+            paddingLeft:"20px",
+            paddingBottom:"none",
+            opacity:0.5
+          }}>
+          <img src={popularDishesShape1_1} alt="Shape" style={{width:"110px"}} />
+        </div>
       </section>
 
       <div className='Details'>

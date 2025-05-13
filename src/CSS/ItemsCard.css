@@ -12,7 +12,7 @@
 
 .dishes-section {
   margin-top: 20px;
-  padding:4rem 2rem;
+  padding: 6rem 2rem 0rem 2rem;
   text-align: center;
   background: var(--second-bg--color);
 
@@ -28,7 +28,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   /* margin: 0.5rem 0 2rem; */
-   margin: 1rem 0 4rem 0; 
+  margin: 1rem 0 4rem 0;
 
 }
 
@@ -47,8 +47,9 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-.card-blur{
-    padding: 1rem;
+
+.card-blur {
+  padding: 1rem;
   border-radius: 1rem;
 }
 
@@ -59,7 +60,7 @@
 .dish-card-img {
   background-image: url("../Images/cardBgImg.jpeg");
   background-color: #000;
-  
+
 }
 
 
@@ -100,10 +101,13 @@
   top: 24rem;
   right: 1rem;
 }
-.bag-icon:hover,.eye-icon:hover{
+
+.bag-icon:hover,
+.eye-icon:hover {
   background-color: var(--main-color);
   color: var(--white-color);
 }
+
 .dish-image {
   width: 130px;
   height: 130px;
@@ -138,4 +142,27 @@
 
 .dish-card--onMEnter {
   background-color: #000;
+}
+
+.popular-shape {
+  position: absolute;
+  right: 20px;
+  opacity: .6;
+  animation: upAndDown infinite ease-in-out 3s alternate;
+
+}
+
+.dishes-section {
+  position: relative;
+}
+
+@keyframes upAndDown {
+
+  from {
+    top: 0px;
+  }
+
+  to {
+    top: 80px;
+  }
 }

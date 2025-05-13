@@ -9,8 +9,16 @@ import { FaYoutube } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 
+import { useDispatch } from "react-redux";
+import { AddToCart, AddToWishList } from "../Slice/DishSlice";
+import { addRemoveQuantity } from "../Slice/DishSlice";
+
+
 const Details = ({ dishData, onClose }) => {
   if (!dishData) return null;
+
+  const dispatch = useDispatch();
+
 
   return (
     <div className="modal-overlay">
@@ -20,7 +28,7 @@ const Details = ({ dishData, onClose }) => {
         </button>
 
         <div className="modal-body">
-       
+
           <div className="modal-left">
             <div className="image-wrapper">
               <img className="circle-img" src={circleImg} alt="circle shape" />
@@ -28,7 +36,7 @@ const Details = ({ dishData, onClose }) => {
             </div>
           </div>
 
-         
+
           <div className="modal-right">
             <h2 className="dish-title">{dishData.name}</h2>
             <div className="rating">
@@ -36,19 +44,45 @@ const Details = ({ dishData, onClose }) => {
             </div>
             <div className="dish-price">₹{dishData.price}</div>
             <p className="dish-desc">
-             {dishData.discription}
+              {dishData.discription}
             </p>
 
             <div className="quantity-box">
               <span className="quantity-title">Quantity</span>
-              <button><TiMinus className='incdec-scale' /></button>
-                           <input type="text" value={1} readOnly />
-              <button><MdAdd className='incdec-scale' /></button>
+              <button
+              onClick={()=>{dispatch(addRemoveQuantity({itemId:dishData.id, quantityValue:-1}))}}
+              ><TiMinus className='incdec-scale' /></button>
+              <input type="text" value={1} readOnly />
+              <button
+              onClick={()=>{dispatch(addRemoveQuantity({itemId:dishData.id, quantityValue:1}))}}
+              ><MdAdd className='incdec-scale' /></button>
             </div>
 
             <div className="btn-group">
-              <button className="add-cart">Add to Cart</button>
-              <button className="wishlist">Add to Wishlist</button>
+              <button className="add-cart"
+                onClick={() => {
+                  dispatch(AddToCart({
+                    id: dishData.id,
+                    name: dishData.name,
+                    price: dishData.price,
+                    discount: dishData.discount,
+                    discription: dishData.discription,
+                    image: dishData.image
+                  }))
+                }}
+              >Add to Cart</button>
+              <button className="wishlist"
+                onClick={() => {
+                  dispatch(AddToWishList({
+                    id: dishData.id,
+                    name: dishData.name,
+                    price: dishData.price,
+                    discount: dishData.discount,
+                    discription: dishData.discription,
+                    image: dishData.image
+                  }))
+                }}
+              >Add to Wishlist</button>
             </div>
 
             <div className="share-box">
