@@ -9,7 +9,7 @@ import { FaYoutube } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AddToCart, AddToWishList } from "../Slice/DishSlice";
 import { addRemoveQuantity } from "../Slice/DishSlice";
 
@@ -18,6 +18,8 @@ const Details = ({ dishData, onClose }) => {
   if (!dishData) return null;
 
   const dispatch = useDispatch();
+    // const {quantity} = useSelector(state => state.allDish.dish)
+  
 
 
   return (
@@ -48,14 +50,15 @@ const Details = ({ dishData, onClose }) => {
             </p>
 
             <div className="quantity-box">
-              <span className="quantity-title">Quantity</span>
-              <button
+              <span className="quantity-title">Quantity: </span>
+              <span style={{fontSize:"16px"}}>{dishData.stock} Left</span>
+              {/* <button
               onClick={()=>{dispatch(addRemoveQuantity({itemId:dishData.id, quantityValue:-1}))}}
-              ><TiMinus className='incdec-scale' /></button>
-              <input type="text" value={1} readOnly />
-              <button
+              ><TiMinus className='incdec-scale' /></button> */}
+              {/* <input type="text" value={dishData.disQuantity} readOnly /> */}
+              {/* <button
               onClick={()=>{dispatch(addRemoveQuantity({itemId:dishData.id, quantityValue:1}))}}
-              ><MdAdd className='incdec-scale' /></button>
+              ><MdAdd className='incdec-scale' /></button> */}
             </div>
 
             <div className="btn-group">
@@ -67,7 +70,8 @@ const Details = ({ dishData, onClose }) => {
                     price: dishData.price,
                     discount: dishData.discount,
                     discription: dishData.discription,
-                    image: dishData.image
+                    image: dishData.image,
+                    stock:dishData.stock
                   }))
                 }}
               >Add to Cart</button>
@@ -79,7 +83,8 @@ const Details = ({ dishData, onClose }) => {
                     price: dishData.price,
                     discount: dishData.discount,
                     discription: dishData.discription,
-                    image: dishData.image
+                    image: dishData.image,
+                    stock:dishData.stock
                   }))
                 }}
               >Add to Wishlist</button>

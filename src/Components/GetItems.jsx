@@ -85,7 +85,8 @@ const GetItems = () => {
                   price: dish.price,
                   discount: dish.discount,
                   discription: dish.discription,
-                  image: dish.image
+                  image: dish.image,
+                  stock:dish.stock
                 }))
               }}
             >
@@ -105,7 +106,8 @@ const GetItems = () => {
                   price: dish.price,
                   discount: dish.discount,
                   discription: dish.discription,
-                  image: dish.image
+                  image: dish.image,
+                  stock:dish.stock
                 }))
               }} >
               <MdOutlineShoppingBag />
