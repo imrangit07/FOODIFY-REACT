@@ -66,17 +66,29 @@ const DishSlice = createSlice({
 
         },
         RemoveToCart: (state, action) => {
-            const itemId = action.payload;
 
-            state.dish = state.dish.filter(item => item.id !== itemId);
+            const isAuthUser = JSON.parse(localStorage.getItem("authState"));
 
-            localStorage.setItem("cartDish", JSON.stringify(state.dish));
+            if (isAuthUser.isAuthenticated) {
+                const itemId = action.payload;
 
-            toast.warn("Removed From Cart! 🍔", {
-                style: {
-                    fontSize: '16px',
-                },
-            });
+                state.dish = state.dish.filter(item => item.id !== itemId);
+
+                localStorage.setItem("cartDish", JSON.stringify(state.dish));
+
+                toast.info("Removed From Cart! 🍔", {
+                    style: {
+                        fontSize: '16px',
+                    },
+                });
+            } else {
+                toast.warn("Please Login or Signup First!", {
+                    style: { fontSize: '16px' },
+                    position: "top-center"
+                });
+            }
+
+
 
         },
 
@@ -106,6 +118,11 @@ const DishSlice = createSlice({
         RemoveToWishItem: (state, action) => {
             const itemId = action.payload;
 
+
+            const isAuthUser = JSON.parse(localStorage.getItem("authState"));
+
+            if (isAuthUser.isAuthenticated) {
+
             state.wish = state.wish.filter(item => item.id !== itemId);
 
             localStorage.setItem("wishDish", JSON.stringify(state.wish));
@@ -115,8 +132,14 @@ const DishSlice = createSlice({
                     fontSize: '16px',
                 },
             });
-
+        }else {
+                toast.warn("Please Login or Signup First!", {
+                    style: { fontSize: '16px' },
+                    position: "top-center"
+                });
+            }
         },
+        
     }
 })
 

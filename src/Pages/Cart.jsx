@@ -18,7 +18,7 @@ const Cart = () => {
 
   const allCartList = CartList.map((item) => {
     return (
-      <React.Fragment key={item.id}>
+      <div key={item.id}>
         <div className="menu-item">
           <div className="item-image">
             <img src={item.image} alt={`${item.name}`} />
@@ -58,7 +58,7 @@ const Cart = () => {
           </div>
         </div>
         <div className="divider"></div>
-      </React.Fragment>
+      </div>
     );
   });
 

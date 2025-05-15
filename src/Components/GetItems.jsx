@@ -11,11 +11,12 @@ import { AddToCart } from '../Slice/DishSlice';
 import { AddToWishList } from '../Slice/DishSlice';
 import { useDispatch } from 'react-redux';
 
-
+import React from 'react';
 import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.png'
 import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.png'
 
 import Details from '../Pages/details';
+import { reactHooksModule } from '@reduxjs/toolkit/query/react';
 const GetItems = () => {
   const [dishes, setDishes] = useState([]);
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -47,7 +48,8 @@ const GetItems = () => {
     const isWishHovered = hoveredHeart === index;
 
     return (
-      <>
+
+      <React.Fragment key={index} >
         <div
           className={`dish-card ${isHovered ? 'dish-card-img' : 'dish-card-bg'}`}
           key={index}
@@ -86,7 +88,7 @@ const GetItems = () => {
                   discount: dish.discount,
                   discription: dish.discription,
                   image: dish.image,
-                  stock:dish.stock
+                  stock: dish.stock
                 }))
               }}
             >
@@ -107,7 +109,7 @@ const GetItems = () => {
                   discount: dish.discount,
                   discription: dish.discription,
                   image: dish.image,
-                  stock:dish.stock
+                  stock: dish.stock
                 }))
               }} >
               <MdOutlineShoppingBag />
@@ -168,32 +170,30 @@ const GetItems = () => {
 
 
         </div>
-
-      </>
-
+      </React.Fragment>
     );
   });
 
   return (
     <>
       <section className="dishes-section">
-       <div className='popular-shape'>
-        <img src={popularDishesShape1_2} alt="" />
-       </div>
+        <div className='popular-shape'>
+          <img src={popularDishesShape1_2} alt="" />
+        </div>
         <div className="header">
           <span className="tag">🔥 POPULAR DISHES 🔥</span>
           <h2>Best Selling Dishes</h2>
         </div>
         <div className="dishes-container">{allDishes}</div>
 
-        <div  style={{
-           textAlign:"left",
-            // background:"red",
-            paddingLeft:"20px",
-            paddingBottom:"none",
-            opacity:0.5
-          }}>
-          <img src={popularDishesShape1_1} alt="Shape" style={{width:"110px"}} />
+        <div style={{
+          textAlign: "left",
+          // background:"red",
+          paddingLeft: "20px",
+          paddingBottom: "none",
+          opacity: 0.5
+        }}>
+          <img src={popularDishesShape1_1} alt="Shape" style={{ width: "110px" }} />
         </div>
       </section>
 

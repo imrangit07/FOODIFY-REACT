@@ -9,12 +9,27 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 
+import LoginSignup from '../Pages/LoginSignup';
+import { useState } from 'react';
+// import { useSelector } from 'react-redux';
+
 
 const NavBar = () => {
+    //   const {isAuthenticated} = useSelector(state => state.authUser);
+     
+   const[isLoginSignup,setLoginSignup] =useState(false)
+
+//    const currentUser = useSelector(state=>state.authUser.user)
+     const currentUser = useSelector(state => state.authUser);
+    //  console.log(currentUser.isAuthenticated);
+    //  console.log(currentUser.user.name);
+     
+   
+
+
     const allCartDish = useSelector(state => state.allDish.dish);
     const allWishDish = useSelector(state => state.allDish.wish);
     const navigate = useNavigate();
-    console.log(allCartDish.length);
     
 
 
@@ -40,8 +55,11 @@ const NavBar = () => {
 
                     <div className="nav-items">
                         <ul>
-                            <li className="login-li" id="login-li">
+                            <li className="login-li" id="login-li"
+                            onClick={()=>{setLoginSignup(prev=>!prev)}}
+                            >
                                 <FaRegUser/>
+                                <span>{(currentUser.isAuthenticated&&currentUser.user.name)?currentUser.user.name:""}</span>
                             </li>
                           
                                 <li className="like-li" onClick={()=>{navigate("/wish")}}>
@@ -59,6 +77,10 @@ const NavBar = () => {
                     </div>
                 </nav>
             </header>
+
+            <div id='LoginSignpu' >
+                 {isLoginSignup ? <LoginSignup  successLogin={()=>setLoginSignup(false)} /> : ""}
+            </div>
         </>
     )
 }
