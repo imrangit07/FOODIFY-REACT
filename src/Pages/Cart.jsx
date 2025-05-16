@@ -1,4 +1,4 @@
-import React from 'react';
+
 import '../CSS/Cart.css';
 import { useSelector } from 'react-redux';
 import { MdAdd } from "react-icons/md";
@@ -8,16 +8,20 @@ import { addRemoveQuantity, RemoveToCart } from '../Slice/DishSlice';
 
 const Cart = () => {
   const CartList = useSelector(state => state.allDish.dish);
+  const isAuthenticated = useSelector(state => state.authUser.isAuthenticated);
+  console.log(isAuthenticated);
+
   const dispatch = useDispatch();
 
   const totalPrice = CartList.reduce((total, item) => total + (item.price * item.quantity), 0);
   const sgst = Math.ceil((totalPrice * 0.09));
   const cgst = Math.ceil((totalPrice * 0.09));
 
-  const grandTotal =( Math.ceil(totalPrice) + sgst + cgst);
+  const grandTotal = (Math.ceil(totalPrice) + sgst + cgst);
 
   const allCartList = CartList.map((item) => {
     return (
+
       <div key={item.id}>
         <div className="menu-item">
           <div className="item-image">
@@ -67,9 +71,16 @@ const Cart = () => {
       <h1>Your Cart Items</h1>
       <div className="divider"></div>
 
-      {CartList.length === 0 ? (
+      {!isAuthenticated || CartList.length === 0 ? (
         <div className="empty-cart">
-          <p>Your cart is empty</p>
+
+          {!isAuthenticated ? (
+            <span>Please login to view your cart</span>
+
+          ) : (
+            <p>Your cart is empty</p>
+          )}
+
         </div>
       ) : (
         <>

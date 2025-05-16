@@ -59,9 +59,18 @@ const AuthSlice = createSlice({
             state.loading = false;
             state.error = action.payload;
         },
-        logout: (state) => {
+          logout: (state) => {
             state.user = null;
             state.isAuthenticated = false;
+            state.loading = false;
+            state.error = null;
+            
+       
+            toast.success("Logged out successfully!", {
+                style: {
+                    fontSize: '16px',
+                },
+            });
         }
     }
 });

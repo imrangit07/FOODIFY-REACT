@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../CSS/LoginSignup.css';
 import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { signupSuccess, loginStart, loginSuccess, loginFailure } from '../Slice/AuthSlice';
+import { signupSuccess, loginStart, loginSuccess, loginFailure, logout } from '../Slice/AuthSlice';
 
-const LoginSignup = () => {
 
-      const { loading, error} = useSelector(state => state.authUser);
+const LoginSignup = ({ successLogin }) => {
+
+    const { loading, error } = useSelector(state => state.authUser);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -22,7 +23,7 @@ const LoginSignup = () => {
         password: ''
     });
 
-  
+
 
     const handleInputChange = (e, isLogin) => {
         const { name, value } = e.target;
@@ -47,7 +48,7 @@ const LoginSignup = () => {
             if (user) {
                 dispatch(loginSuccess(user));
                 setLoginData({ email: '', password: '' });
-                navigate("/home")
+                successLogin(prev => !prev)
             } else {
                 dispatch(loginFailure("Invalid email or password"));
             }
@@ -57,7 +58,7 @@ const LoginSignup = () => {
     };
 
     // useEffect(()=>{
-        
+
     // },[]);
 
     const handleSignup = (e) => {
@@ -71,6 +72,11 @@ const LoginSignup = () => {
         setUserData({ name: '', email: '', password: '' });
 
     };
+    const handleLogout = () => {
+        dispatch(logout());
+
+        localStorage.removeItem('authState');
+    }
 
     const toggleForm = () => {
         setIsActive(!isActive);
@@ -128,10 +134,22 @@ const LoginSignup = () => {
                             {loading ? 'Logging in...' : 'Login'}
                         </button>
                         <div className="forgot-password">
-                            <span>Logout  </span>
+                            <span
+                                style={{
+                                    cursor: "pointer",
+                                    color: "blue",
+                                    textDecoration: "none",  
+                                    transition: "text-decoration 0.3s ease"  
+                                }}
+                                onMouseEnter={(e) => e.currentTarget.style.textDecoration = "underline"}
+                                onMouseLeave={(e) => e.currentTarget.style.textDecoration = "none"}
+                                onClick={handleLogout}
+                            >
+                                Logout
+                            </span>
                             |
-                            <span>  Forgot password?</span>
-                        
+                            <span>Forgot password?</span>
+
                         </div>
                         <div className="social-login">
                             <p>or continue with</p>

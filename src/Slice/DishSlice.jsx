@@ -11,28 +11,37 @@ const DishSlice = createSlice({
     reducers: {
         AddToCart: (state, action) => {
             const newItem = action.payload;
+            const authState = localStorage.getItem("authState");
+            const isAuthUser = authState ? JSON.parse(authState) : { isAuthenticated: false };
+
             const existingItem = state.dish.some(item => item.id === newItem.id);
 
-            if (existingItem) {
-                // existingItem.quantity += 1;
-                toast.info("Already in cart! 🛒", {
-                    style: {
-                        fontSize: '16px',
-                    },
-                });
+            if (isAuthUser.isAuthenticated) {
 
+                if (existingItem) {
+                    // existingItem.quantity += 1;
+                    toast.info("Already in cart! 🛒", {
+                        style: {
+                            fontSize: '16px',
+                        },
+                    });
+
+                } else {
+                    state.dish.push({ ...newItem, quantity: 1 });
+
+                    toast.success("Added to Crt! 🍕", {
+                        style: {
+                            fontSize: '16px',
+                        },
+                    });
+                }
+                localStorage.setItem("cartDish", JSON.stringify(state.dish));
             } else {
-                state.dish.push({ ...newItem, quantity: 1 });
-
-                toast.success("Added to Crt! 🍕", {
-                    style: {
-                        fontSize: '16px',
-                    },
+                toast.warn("Please Login or Signup First!", {
+                    style: { fontSize: '16px' },
+                    position: "top-center"
                 });
             }
-            localStorage.setItem("cartDish", JSON.stringify(state.dish));
-
-
 
         },
         addRemoveQuantity: (state, action) => {
@@ -67,7 +76,8 @@ const DishSlice = createSlice({
         },
         RemoveToCart: (state, action) => {
 
-            const isAuthUser = JSON.parse(localStorage.getItem("authState"));
+            const authState = localStorage.getItem("authState");
+            const isAuthUser = authState ? JSON.parse(authState) : { isAuthenticated: false };
 
             if (isAuthUser.isAuthenticated) {
                 const itemId = action.payload;
@@ -94,52 +104,64 @@ const DishSlice = createSlice({
 
         AddToWishList: (state, action) => {
             const newItem = action.payload;
+
+            const authState = localStorage.getItem("authState");
+            const isAuthUser = authState ? JSON.parse(authState) : { isAuthenticated: false };
+
             const existingWish = state.wish.some(item => item.id === newItem.id);
 
-            if (existingWish) {
-                toast.info("Already in Cart! 🛒", {
-                    style: {
-                        fontSize: '16px',
-                    },
-                });
-            } else {
-                state.wish.push({ ...newItem, quantity: 1 });
 
-                toast.success("Added to Wishlist! 😋", {
-                    style: {
-                        fontSize: '16px',
-                    },
+            if (isAuthUser.isAuthenticated) {
+
+                if (existingWish) {
+                    toast.info("Already in Cart! 🛒", {
+                        style: {
+                            fontSize: '16px',
+                        },
+                    });
+                } else {
+                    state.wish.push({ ...newItem, quantity: 1 });
+
+                    toast.success("Added to Wishlist! 😋", {
+                        style: {
+                            fontSize: '16px',
+                        },
+                    });
+                }
+                localStorage.setItem("wishDish", JSON.stringify(state.wish));
+            } else {
+                toast.warn("Please Login or Signup First!", {
+                    style: { fontSize: '16px' },
+                    position: "top-center"
                 });
             }
-            localStorage.setItem("wishDish", JSON.stringify(state.wish));
-
 
         },
         RemoveToWishItem: (state, action) => {
             const itemId = action.payload;
 
-
-            const isAuthUser = JSON.parse(localStorage.getItem("authState"));
+            const authState = localStorage.getItem("authState");
+            const isAuthUser = authState ? JSON.parse(authState) : { isAuthenticated: false };
 
             if (isAuthUser.isAuthenticated) {
 
-            state.wish = state.wish.filter(item => item.id !== itemId);
+                state.wish = state.wish.filter(item => item.id !== itemId);
 
-            localStorage.setItem("wishDish", JSON.stringify(state.wish));
+                localStorage.setItem("wishDish", JSON.stringify(state.wish));
 
-            toast.warn("emoved From Cart! 🍔", {
-                style: {
-                    fontSize: '16px',
-                },
-            });
-        }else {
+                toast.warn("emoved From Cart! 🍔", {
+                    style: {
+                        fontSize: '16px',
+                    },
+                });
+            } else {
                 toast.warn("Please Login or Signup First!", {
                     style: { fontSize: '16px' },
                     position: "top-center"
                 });
             }
         },
-        
+
     }
 })
 

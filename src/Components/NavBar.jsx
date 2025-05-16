@@ -15,6 +15,8 @@ import { useState } from 'react';
 
 
 const NavBar = () => {
+  const isAuthenticated = useSelector(state => state.authUser.isAuthenticated);
+
     //   const {isAuthenticated} = useSelector(state => state.authUser);
      
    const[isLoginSignup,setLoginSignup] =useState(false)
@@ -64,13 +66,13 @@ const NavBar = () => {
                           
                                 <li className="like-li" onClick={()=>{navigate("/wish")}}>
                                     <FaRegHeart />
-                                    <div className="like-count flex-center wishCount" id="wishCount">{allWishDish.length}</div>
+                                    <div className="like-count flex-center wishCount" id="wishCount">{isAuthenticated?allWishDish.length:0}</div>
                                 </li>
                             
                             
                                 <li className="cart-li" onClick={()=>{navigate("/cart")}}>
                                     <BsCart/>
-                                    <div className="cart-count flex-center" id="cartCoutn">{allCartDish.length}</div>
+                                    <div className="cart-count flex-center" id="cartCoutn">{isAuthenticated?allCartDish.length:0}</div>
                                 </li>
                            
                         </ul>

@@ -2,9 +2,12 @@ import React from 'react';
 import '../CSS/Cart.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddToCart, RemoveToWishItem } from '../Slice/DishSlice';
+import js from '@eslint/js';
 
 const Wish = () => {
     const WishList = useSelector(state => state.allDish.wish);
+  const isAuthenticated = useSelector(state => state.authUser.isAuthenticated);
+
     const dispatch = useDispatch();
 
     const allWishList = WishList.map((item) => {
@@ -58,10 +61,19 @@ const Wish = () => {
             <h1>Your Wishlist Items</h1>
             <div className="divider"></div>
 
-            {WishList.length === 0 ? (
+            {!isAuthenticated || WishList.length === 0 ? (
                 <div className="empty-wishlist">
-                    <p>Your wishlist is empty</p>
-                    <p className="empty-message">Add items to your wishlist to see them here</p>
+
+                    {!isAuthenticated ? (
+                        <span style={{fontSize:"1.5rem"}}>Please login to view your wishlist</span>
+                    ) : (
+                        <div>
+                            <p>Your wishlist is empty</p>
+                            <p className="empty-message">Add items to your wishlist to see them here</p>
+                        </div>
+
+                    )}
+
                 </div>
             ) : (
                 <>
