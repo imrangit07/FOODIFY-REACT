@@ -5,19 +5,36 @@ import { MdAdd } from "react-icons/md";
 import { TiMinus } from "react-icons/ti";
 import { useDispatch } from 'react-redux';
 import { addRemoveQuantity, RemoveToCart } from '../Slice/DishSlice';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
+import Checkout from '../Pages/Checkout';
 
 const Cart = () => {
   const CartList = useSelector(state => state.allDish.dish);
   const isAuthenticated = useSelector(state => state.authUser.isAuthenticated);
   console.log(isAuthenticated);
 
+  const [showCheckout, setShowCheckout] = useState(false);
+
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const totalPrice = CartList.reduce((total, item) => total + (item.price * item.quantity), 0);
   const sgst = Math.ceil((totalPrice * 0.09));
   const cgst = Math.ceil((totalPrice * 0.09));
 
   const grandTotal = (Math.ceil(totalPrice) + sgst + cgst);
+
+
+  const handleCheckoutClick = () => {
+    setShowCheckout(true);
+  };
+  const handleOrderSubmit = (orderData) => {
+  console.log('Order submitted:', orderData);
+  setShowCheckout(false);
+  
+};
 
   const allCartList = CartList.map((item) => {
     return (
@@ -100,7 +117,11 @@ const Cart = () => {
             </div>
           </div>
           <div className="divider"></div>
+
+
           {allCartList}
+
+
           <div className="cart-summary">
             <h3>Order Summary</h3>
             <div className="summary-row">
@@ -120,8 +141,26 @@ const Cart = () => {
               <span>Grand Total:</span>
               <span>₹{grandTotal}</span>
             </div>
+
+            <div className='checkout-box'>
+
+
+              <button
+                onClick={handleCheckoutClick}
+              >Proceed to checkout</button>
+            </div>
           </div>
         </>
+      )}
+
+      {showCheckout && (
+        <Checkout
+          tax={cgst}
+          grandTotal={grandTotal}
+          cartItems={CartList}
+          onClose={() => setShowCheckout(false)}
+          onSubmit={handleOrderSubmit}
+        />
       )}
     </div>
   );
