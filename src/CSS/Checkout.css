@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+}
 .checkout-overlay {
   position: fixed;
   top: 0;
@@ -42,7 +46,7 @@
 
 .checkout-container h2 {
   margin-top: 0;
-  color: #e63946;
+  color: #E35302;
   font-size: 28px;
   margin-bottom: 20px;
 }
@@ -170,7 +174,7 @@ textarea {
 }
 
 .submit-order-btn {
-  background-color: #e63946;
+  background-color: #E35302;
   color: white;
   border: none;
   padding: 12px 20px;
@@ -184,10 +188,19 @@ textarea {
 }
 
 .submit-order-btn:hover {
-  background-color: #d62839;
+  background-color: #E35302;
 }
 
+/* .error-message {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: block;
+}
 
+input.error, textarea.error {
+    border-color: #ff4444;
+} */
 @media (max-width: 768px) {
   .checkout-content {
     flex-direction: column;

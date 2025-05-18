@@ -4,7 +4,9 @@ import Home from "./Pages/Home"
 import Cart from "./Pages/Cart"
 import Wish from "./Pages/Wish";
 import NotFound from "./Pages/NotFound";
-import Checkout from "./Pages/Checkout";
+import PaymentSuccess from "./Pages/PaymentSuccess";
+import TrackOrder from "./Pages/TrackOrders";
+
 
 const App = () => {
   return (
@@ -16,7 +18,9 @@ const App = () => {
       <Route path="home" element={<Home />}/>
       <Route path="cart" element={<Cart />}/>
       <Route path="wish" element={<Wish />}/>
-      <Route path="checkout" element={<Checkout />}/>
+      <Route path="success" element={<PaymentSuccess />}/>
+      <Route path="track-order" element={<TrackOrder />}/>
+      
 
 
       <Route path="*" element={<NotFound />}/>

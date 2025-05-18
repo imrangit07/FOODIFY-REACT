@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import '../CSS/Checkout.css';
+import { useNavigate } from 'react-router-dom';
+import { CheckOutSuccess } from '../Slice/CheckOutSlice';
+import { useDispatch } from 'react-redux';
 
 const Checkout = ({ cartItems, tax, grandTotal, onClose, onSubmit }) => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -9,10 +14,11 @@ const Checkout = ({ cartItems, tax, grandTotal, onClose, onSubmit }) => {
         address: '',
         city: '',
         state: '',
-        zipCode: '',
+        pincode: '',
         paymentMethod: 'credit-card',
         deliveryInstructions: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,18 +28,37 @@ const Checkout = ({ cartItems, tax, grandTotal, onClose, onSubmit }) => {
         }));
     };
 
+    const allFieldsFilled = () => {
+        const requiredFields = ['name', 'email', 'phone', 'address', 'city', 'state', 'pincode'];
+        return requiredFields.every(field => formData[field].trim() !== '');
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({
-            ...formData,
-            items: cartItems,
-            total: cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0)
-        });
+        setIsSubmitting(true);
+
+        if (allFieldsFilled()) {
+            const orderData = {
+                ...formData,
+                items: cartItems,
+                total: cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+                tax: tax,
+                grandTotal: grandTotal
+            };
+
+
+            dispatch(CheckOutSuccess(orderData));
+
+
+            if (onSubmit) {
+                onSubmit(orderData);
+            }
+
+            navigate("/success");
+        }
     };
 
     const calculateTotal = () => {
-        // let total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
         return grandTotal;
     };
 
@@ -153,12 +178,12 @@ const Checkout = ({ cartItems, tax, grandTotal, onClose, onSubmit }) => {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="zipCode">Pincode</label>
+                                <label htmlFor="Pincode">Pincode</label>
                                 <input
                                     type="text"
-                                    id="zipCode"
-                                    name="zipCode"
-                                    value={formData.zipCode}
+                                    id="Pincode"
+                                    name="pincode"
+                                    value={formData.pincode}
                                     onChange={handleChange}
                                     required
                                 />
@@ -213,7 +238,17 @@ const Checkout = ({ cartItems, tax, grandTotal, onClose, onSubmit }) => {
                             </div>
                         </div>
 
-                        <button type="submit" className="submit-order-btn">
+
+                        {isSubmitting && !allFieldsFilled() && (
+                            <div className="error-message">
+                                Please fill all required fields
+                            </div>
+                        )}
+
+                        <button type="submit"
+
+                            className="submit-order-btn"
+                        >
                             Place Order
                         </button>
                     </form>

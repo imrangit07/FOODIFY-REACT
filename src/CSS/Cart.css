@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+}
 .cart-container {
   width: 800px;
   margin: 10rem auto 2rem;
   padding: 20px;
-  font-family: Arial, sans-serif;
 }
 
 .cart-container h1 {
