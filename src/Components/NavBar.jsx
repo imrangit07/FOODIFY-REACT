@@ -16,25 +16,26 @@ import { useState } from 'react';
 
 
 const NavBar = () => {
-  const isAuthenticated = useSelector(state => state.authUser.isAuthenticated);
+    const isAuthenticated = useSelector(state => state.authUser.isAuthenticated);
 
     //   const {isAuthenticated} = useSelector(state => state.authUser);
-     
-   const[isLoginSignup,setLoginSignup] =useState(false)
-   const[HamburgerMenu,setHamburgerMenu] =useState(false);
 
-//    const currentUser = useSelector(state=>state.authUser.user)
-     const currentUser = useSelector(state => state.authUser);
+    const [isLoginSignup, setLoginSignup] = useState(false)
+    const [HamburgerMenu, setHamburgerMenu] = useState(false);
+
+    //    const currentUser = useSelector(state=>state.authUser.user)
+    const currentUser = useSelector(state => state.authUser);
     //  console.log(currentUser.isAuthenticated);
     //  console.log(currentUser.user.name);
-     
-   
+
+
 
 
     const allCartDish = useSelector(state => state.allDish.dish);
     const allWishDish = useSelector(state => state.allDish.wish);
     const navigate = useNavigate();
-    
+
+
 
 
     return (
@@ -42,13 +43,13 @@ const NavBar = () => {
             <header>
                 <nav className="navbar flex-center">
                     <div className="nav-logo">
-                        <div className="video-crop-container" onClick={()=>{navigate('/home')}}>
-                            
-                                <video controls autoPlay muted loop>
-                                    <source src={Logo} type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
-                           
+                        <div className="video-crop-container" onClick={() => { navigate('/home') }}>
+
+                            <video controls autoPlay muted loop>
+                                <source src={Logo} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+
                         </div>
                     </div>
                     <div className="nav-search--input flex-center">
@@ -60,47 +61,77 @@ const NavBar = () => {
                     <div className="nav-items">
                         <ul>
                             <li className="login-li" id="login-li"
-                            onClick={()=>{setLoginSignup(prev=>!prev)}}
+                                onClick={() => { setLoginSignup(prev => !prev) }}
                             >
-                                <FaRegUser/>
-                                <span>{(currentUser.isAuthenticated&&currentUser.user.name)?currentUser.user.name:""}</span>
+                                <FaRegUser />
+                                <span>{(currentUser.isAuthenticated && currentUser.user.name) ? currentUser.user.name : ""}</span>
                             </li>
-                          
-                                <li className="like-li" onClick={()=>{navigate("/wish")}}>
-                                    <FaRegHeart />
-                                    <div className="like-count flex-center wishCount" id="wishCount">{isAuthenticated?allWishDish.length:0}</div>
-                                </li>
-                            
-                            
-                                <li className="cart-li" onClick={()=>{navigate("/cart")}}>
-                                    <BsCart/>
-                                    <div className="cart-count flex-center" id="cartCoutn">{isAuthenticated?allCartDish.length:0}</div>
-                                </li>
-                                <li className="cart-li" onClick={()=>{setHamburgerMenu(prev=>!prev)}}>
-                                    <GiHamburgerMenu/>
-                                </li>
-                           
+
+                            <li className="like-li" onClick={() => { navigate("/wish") }}>
+                                <FaRegHeart />
+                                <div className="like-count flex-center wishCount" id="wishCount">{isAuthenticated ? allWishDish.length : 0}</div>
+                            </li>
+
+
+                            <li className="cart-li" onClick={() => { navigate("/cart") }}>
+                                <BsCart />
+                                <div className="cart-count flex-center" id="cartCoutn">{isAuthenticated ? allCartDish.length : 0}</div>
+                            </li>
+                            <li className="cart-li" onClick={() => { setHamburgerMenu(prev => !prev) }}>
+                                <GiHamburgerMenu />
+                            </li>
+
                         </ul>
                     </div>
                 </nav>
                 <div>
-                    <ul className={HamburgerMenu?'all-menu--itmes':'all-menu--display'}>
+                    <ul className={HamburgerMenu ? 'all-menu--itmes' : 'all-menu--display'}>
                         <li
-                        onClick={()=>navigate("/home")}
+                            onClick={() => {
+                                navigate("/home")
+                                setHamburgerMenu(false)
+                            }}
                         >Home</li>
                         <li
-                        onClick={()=>navigate("/pizza")}
+                            onClick={() => {
+                                navigate("/pizza")
+                                setHamburgerMenu(false)
+                            }}
                         >Pizza</li>
-                        <li>Chicken</li>
-                        <li>Burger</li>
-                        <li>About</li>
-                        <li>Contact Us</li>
+                        <li
+                            onClick={() => {
+                                navigate("/burger")
+                                setHamburgerMenu(false)
+                            }}
+                        >Burger</li>
+                          <li
+                            onClick={() => {
+                                navigate("/chicken")
+                                setHamburgerMenu(false)
+                            }}>Chicken</li>
+                        <li
+                            onClick={() => {
+                                navigate("/track-order")
+                                setHamburgerMenu(false)
+                            }}>My Orders</li>
+                        <li
+                            onClick={() => {
+                                navigate("/about")
+                                setHamburgerMenu(false)
+                            }}
+                        >About</li>
+                        <li
+                            onClick={() => {
+                                navigate("/contact")
+                                setHamburgerMenu(false)
+                            }}
+                        >Contact Us</li>
                     </ul>
                 </div>
             </header>
 
             <div id='LoginSignpu' >
-                 {isLoginSignup ? <LoginSignup  successLogin={()=>setLoginSignup(false)} /> : ""}
+                {isLoginSignup ? <LoginSignup successLogin={() => setLoginSignup(false)} /> : ""}
             </div>
         </>
     )

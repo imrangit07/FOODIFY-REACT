@@ -56,11 +56,6 @@ const LoginSignup = ({ successLogin }) => {
             dispatch(loginFailure("Login failed"));
         }
     };
-
-    // useEffect(()=>{
-
-    // },[]);
-
     const handleSignup = (e) => {
         e.preventDefault();
         if (!userData.name || !userData.email || !userData.password) {

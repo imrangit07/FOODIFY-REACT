@@ -186,13 +186,10 @@ const GetItems = () => {
           <span className="tag">🔥 POPULAR DISHES 🔥</span>
           <h2>Best Selling Dishes</h2>
         </div>
+        
         <div className="dishes-container">{allDishes}</div>
 
-
-
         <div className='shape-img'>
-         
-
           <img src={popularDishesShape1_1} alt="Shape" style={{ width: "110px" }} />
         </div>
          <div>

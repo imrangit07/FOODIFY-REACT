@@ -6,32 +6,30 @@ import axios from "axios";
 
 import Details from "./details";
 
-import { AddToCart } from '../Slice/DishSlice';
-import { AddToWishList } from '../Slice/DishSlice';
-import { useDispatch } from 'react-redux';
-
 import { FaRegHeart } from "react-icons/fa";
 import { IoMdHeart } from "react-icons/io";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
 
+import { AddToCart } from '../Slice/DishSlice';
+import { AddToWishList } from '../Slice/DishSlice';
+import { useDispatch } from 'react-redux';
+
 import cardBgImag from '../../public/Images/cardBgImg.jpeg'
 import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.png'
 import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.png'
-const Pizza = () => {
+const Chicken = () => {
   const [dishes, setDishes] = useState([]);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [hoveredHeart, setHoveredHeart] = useState(null);
 
   const [isDetailOpen, setDetailOpen] = useState(false);
   const [selectedDish, setSelectedDish] = useState(null);
-
   const dispatch = useDispatch();
-
   const LoadItems = async () => {
     try {
-      const res = await axios.get(`${dbPath}/?catagory=pizza`);
+      const res = await axios.get(`${dbPath}/?catagory=chicken`);
       setDishes(res.data);
     } catch (error) {
       console.log(error);
@@ -175,11 +173,11 @@ const Pizza = () => {
   return (
     <>
       <div className='page-sections'>
-        <h1 className="page-title">PIZZA</h1>
+        <h1 className="page-title">CHICKEN</h1>
         <ul>
           <li className="home-page">Home</li>
           /
-          <li className="active-page">Pizza</li>
+          <li className="active-page">Chicken</li>
         </ul>
       </div>
       <section className="dishes-section">
@@ -208,4 +206,4 @@ const Pizza = () => {
   )
 }
 
-export default Pizza
+export default Chicken
