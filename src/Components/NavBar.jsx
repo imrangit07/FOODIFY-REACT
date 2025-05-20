@@ -2,6 +2,7 @@ import '../CSS/NavBar.css';
 import { Link } from 'react-router-dom';
 import Logo from '../../public/Images/Logos/Foodify-1.mp4';
 import { FaRegUser, FaRegHeart } from "react-icons/fa6";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { BsCart } from "react-icons/bs";
 import { IoSearch } from "react-icons/io5";
 
@@ -20,6 +21,7 @@ const NavBar = () => {
     //   const {isAuthenticated} = useSelector(state => state.authUser);
      
    const[isLoginSignup,setLoginSignup] =useState(false)
+   const[HamburgerMenu,setHamburgerMenu] =useState(false);
 
 //    const currentUser = useSelector(state=>state.authUser.user)
      const currentUser = useSelector(state => state.authUser);
@@ -74,10 +76,27 @@ const NavBar = () => {
                                     <BsCart/>
                                     <div className="cart-count flex-center" id="cartCoutn">{isAuthenticated?allCartDish.length:0}</div>
                                 </li>
+                                <li className="cart-li" onClick={()=>{setHamburgerMenu(prev=>!prev)}}>
+                                    <GiHamburgerMenu/>
+                                </li>
                            
                         </ul>
                     </div>
                 </nav>
+                <div>
+                    <ul className={HamburgerMenu?'all-menu--itmes':'all-menu--display'}>
+                        <li
+                        onClick={()=>navigate("/home")}
+                        >Home</li>
+                        <li
+                        onClick={()=>navigate("/pizza")}
+                        >Pizza</li>
+                        <li>Chicken</li>
+                        <li>Burger</li>
+                        <li>About</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
             </header>
 
             <div id='LoginSignpu' >

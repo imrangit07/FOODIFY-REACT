@@ -6,6 +6,7 @@ import Wish from "./Pages/Wish";
 import NotFound from "./Pages/NotFound";
 import PaymentSuccess from "./Pages/PaymentSuccess";
 import TrackOrder from "./Pages/TrackOrders";
+import Pizza from "./Pages/Pizza";
 
 
 const App = () => {
@@ -20,6 +21,8 @@ const App = () => {
       <Route path="wish" element={<Wish />}/>
       <Route path="success" element={<PaymentSuccess />}/>
       <Route path="track-order" element={<TrackOrder />}/>
+
+      <Route path="pizza" element={<Pizza />}/>
       
 
 

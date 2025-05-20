@@ -46,7 +46,7 @@
 
 .checkout-container h2 {
   margin-top: 0;
-  color: #E35302;
+  color: #d90b22;
   font-size: 28px;
   margin-bottom: 20px;
 }
@@ -174,7 +174,7 @@ textarea {
 }
 
 .submit-order-btn {
-  background-color: #E35302;
+  background-color: #d90b22;
   color: white;
   border: none;
   padding: 12px 20px;
@@ -188,7 +188,7 @@ textarea {
 }
 
 .submit-order-btn:hover {
-  background-color: #E35302;
+  background-color: #d90b22;
 }
 
 /* .error-message {

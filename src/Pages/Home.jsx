@@ -4,6 +4,8 @@ import SwiperSection from '../Components/SwiperSection'
 // import Details from './Details'
 
 import '../CSS/Details.css';
+import Offer from './Offer';
+import Chef from './Chef';
 
 const Home = () => {
 
@@ -12,6 +14,8 @@ const Home = () => {
       <Carousels />
       <SwiperSection />
       <GetItems />
+      <Offer/>
+      <Chef/>
 
      
     </>

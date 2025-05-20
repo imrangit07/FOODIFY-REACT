@@ -15,6 +15,8 @@ import React from 'react';
 import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.png'
 import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.png'
 
+import { FaArrowRight } from "react-icons/fa";
+
 import Details from '../Pages/details';
 import { reactHooksModule } from '@reduxjs/toolkit/query/react';
 const GetItems = () => {
@@ -186,15 +188,16 @@ const GetItems = () => {
         </div>
         <div className="dishes-container">{allDishes}</div>
 
-        <div style={{
-          textAlign: "left",
-          // background:"red",
-          paddingLeft: "20px",
-          paddingBottom: "none",
-          opacity: 0.5
-        }}>
+
+
+        <div className='shape-img'>
+         
+
           <img src={popularDishesShape1_1} alt="Shape" style={{ width: "110px" }} />
         </div>
+         <div>
+            <button className='all-itme--btn'>VIEW ALL ITME <FaArrowRight style={{marginLeft:"20px"}}/></button>
+          </div>
       </section>
 
       <div className='Details'>

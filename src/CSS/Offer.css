@@ -1,0 +1,200 @@
+.offer-section {
+    width: 100%;
+    height: auto;
+    background-image: url("../../public/Images/dishes2/ctaBG1_1.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 120px;
+    position: relative;
+    flex-direction: row;
+}
+
+.offer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    position: relative;
+}
+
+.offer-title {
+    color: #d90b22;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 105px;
+    text-transform: uppercase;
+}
+
+.offer-main--title {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+
+.offer-subTitle {
+    color: #FFA100;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 105px;
+    text-transform: capitalize;
+}
+
+.offer-btn {
+    background-color: #d90b22;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.offer-img {
+    position: relative;
+    min-width: 650px;
+}
+
+.offer-img img {
+    position: absolute;
+    width: 100%;
+    object-position: center;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    animation: ThumbImg linear 2s infinite alternate;
+}
+
+@keyframes ThumbImg {
+    from {
+        right: -40px;
+    }
+
+    to {
+        right: 10px;
+    }
+}
+
+.shape1 {
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    animation: shape1 linear 2s infinite alternate;
+}
+
+@keyframes shape1 {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 40px;
+    }
+}
+
+.shape2 {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    animation: shape3or2 linear 2s infinite alternate;
+}
+
+.shape3 {
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    animation: shape3or2 linear 2s infinite alternate;
+}
+
+@keyframes shape3or2 {
+    from {
+        bottom: 40px;
+    }
+
+    to {
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 1124px) {
+    .offer-section {
+        min-height: 700px;
+    }
+
+    .offer-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .offer-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .offer-img {
+        order: -1;
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .offer-title {
+        margin-top: 100px;
+        line-height: normal;
+
+    }
+
+    .offer-main--title {
+        line-height: normal;
+    }
+
+    .offer-subTitle {
+        line-height: normal;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .offer-section {
+        min-height: auto;
+    }
+
+    .offer-title {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .offer-main--title {
+        font-size: 28px;
+    }
+
+    .offer-subTitle {
+        font-size: 18px;
+    }
+
+    .offer-img {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .offer-img img {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        animation: none;
+    }
+
+    .shape1,
+    .shape2,
+    .shape3 {
+        display: none;
+    }
+}

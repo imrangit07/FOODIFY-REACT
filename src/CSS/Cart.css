@@ -13,7 +13,7 @@
   color: #fff;
   margin-bottom: 20px;
   text-align: center;
-  background-color: #E35302;
+  background-color: #d90b22;
   border-radius: 30px;
   padding: 10px;
 }
@@ -143,13 +143,13 @@
 
 .item-total--Price {
   font-size: 2rem;
-  color: #E35302;
+  color: #d90b22;
   font-weight: bold;
 }
 
 .add-to--cart {
   background-color: #fff;
-  color: #E35302;
+  color: #d90b22;
   font-weight: 600;
   padding: 5px 8px;
   border: 1px solid #FFA100;
@@ -176,7 +176,7 @@
   color: red;
   font-weight: 600;
   padding: 5px 16px;
-  border: 1px solid #E35302;
+  border: 1px solid #d90b22;
   border-radius: 10px;
   margin-top: 10px;
   font-size: 1rem;
@@ -239,7 +239,7 @@
 .grand-total {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #E35302;
+  color: #d90b22;
   margin-top: 10px;
 }
 .checkout-box{
@@ -254,7 +254,7 @@
   padding: 15px 25px;
   letter-spacing: 1px;
   border: 1px solid #ffe100;
-  background-color: #E35302;
+  background-color: #d90b22;
   color: #fff;
 }
 

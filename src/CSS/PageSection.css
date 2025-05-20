@@ -1,0 +1,37 @@
+.page-sections {
+    width: 100vw;
+    height: 60vh;
+    background-image: url("../../public/Images/dishes2/allBg.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 80px;
+
+}
+
+.page-sections .page-title {
+    color: #fff;
+    font-size: 6rem;
+    letter-spacing: 2px;
+}
+
+.page-sections ul {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    font-size: 1.6rem;
+    color: #fff;
+}
+.home-page{
+    color: #fff;
+}
+
+.active-page {
+    color: #d90b22;
+}
