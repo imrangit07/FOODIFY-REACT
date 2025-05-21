@@ -19,6 +19,7 @@ import { useDispatch } from 'react-redux';
 import cardBgImag from '../../public/Images/cardBgImg.jpeg'
 import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.png'
 import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.png'
+import { useNavigate } from "react-router-dom";
 const Chicken = () => {
   const [dishes, setDishes] = useState([]);
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -27,6 +28,7 @@ const Chicken = () => {
   const [isDetailOpen, setDetailOpen] = useState(false);
   const [selectedDish, setSelectedDish] = useState(null);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const LoadItems = async () => {
     try {
       const res = await axios.get(`${dbPath}/?catagory=chicken`);
@@ -175,7 +177,9 @@ const Chicken = () => {
       <div className='page-sections'>
         <h1 className="page-title">CHICKEN</h1>
         <ul>
-          <li className="home-page">Home</li>
+            <li className="home-page"
+          onClick={()=>navigate('/')}
+          >Home</li>
           /
           <li className="active-page">Chicken</li>
         </ul>

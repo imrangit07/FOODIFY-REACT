@@ -178,7 +178,9 @@
   background: orange;
   color: white;
 }
-
+ul li{
+  cursor: pointer;
+}
 
 .share-box {
   display: flex;
