@@ -4,7 +4,7 @@ import '../CSS/ItemsCard.css';
 import dbPath from '../Config/DbPath';
 import axios from "axios";
 
-import Details from "./details";
+import Details from "./Details";
 
 import { FaRegHeart } from "react-icons/fa";
 import { IoMdHeart } from "react-icons/io";
