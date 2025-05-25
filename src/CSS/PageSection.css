@@ -1,7 +1,7 @@
 .page-sections {
     width: 100vw;
     height: 60vh;
-    background-image: url("../../public/Images/dishes2/allBg.jpg");
+    background-image: url("./Images/dishes2/allBg.jpg");
     background-position: center;
     background-size: cover;
     display: flex;

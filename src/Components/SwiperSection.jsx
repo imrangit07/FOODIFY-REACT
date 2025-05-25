@@ -3,17 +3,17 @@ import 'swiper/swiper-bundle.css';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import '../CSS/SwiperSection.css';
 
-import img1 from '../../public/Images/dishes1/dishes1_1.png';
-import img2 from '../../public/Images/dishes1/dishes1_2.png';
-import img3 from '../../public/Images/dishes1/dishes1_3.png';
-import img4 from '../../public/Images/dishes1/dishes1_4.png';
-import img5 from '../../public/Images/dishes1/dishes1_5.png';
-import img6 from '../../public/Images/dishes1/dishes1_6.png';
-// import img7 from '../../public/Images/dishes1/dishes1_7.png';
-// import img8 from '../../public/Images/dishes1/dishes1_8.png';
-// import img9 from '../../public/Images/dishes1/dishes1_9.png';
-import img10 from '../../public/Images/dishes1/dishes1_10.png';
-import circleShap from '../../public/Images/dishes2/circleShape.png';
+import img1 from './Images/dishes1/dishes1_1.png';
+import img2 from './Images/dishes1/dishes1_2.png';
+import img3 from './Images/dishes1/dishes1_3.png';
+import img4 from './Images/dishes1/dishes1_4.png';
+import img5 from './Images/dishes1/dishes1_5.png';
+import img6 from './Images/dishes1/dishes1_6.png';
+// import img7 from './Images/dishes1/dishes1_7.png';
+// import img8 from './Images/dishes1/dishes1_8.png';
+// import img9 from './Images/dishes1/dishes1_9.png';
+import img10 from './Images/dishes1/dishes1_10.png';
+import circleShap from './Images/dishes2/circleShape.png';
 
 const dishes = [
     { image: img1, name: 'Chinese', price: 280.99 },

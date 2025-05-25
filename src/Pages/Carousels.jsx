@@ -4,26 +4,26 @@ import '../CSS/Carousels.css'
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 
 
-import banner1 from '../../public/Images/Banners/mainBanner-1.png';
-import banner2 from '../../public/Images/Banners/mainBanner-2.png';
-import banner3 from '../../public/Images/Banners/mainBanner-3.png';
-import banner4 from '../../public/Images/Banners/mainBanner-4.png';
-import banner5 from '../../public/Images/Banners/mainBanner-5.png';
+import banner1 from './Images/Banners/mainBanner-1.png';
+import banner2 from './Images/Banners/mainBanner-2.png';
+import banner3 from './Images/Banners/mainBanner-3.png';
+import banner4 from './Images/Banners/mainBanner-4.png';
+import banner5 from './Images/Banners/mainBanner-5.png';
 
-import banner1Tablet from '../../public/Images/Banners/mainBanner-1-Tablet.png';
-import banner1Mobail from '../../public/Images/Banners/mainBanner-1-Mobail.png';
+import banner1Tablet from './Images/Banners/mainBanner-1-Tablet.png';
+import banner1Mobail from './Images/Banners/mainBanner-1-Mobail.png';
 
-import banner2Tablet from '../../public/Images/Banners/mainBanner-2-Tablet.png';
-import banner2Mobail from '../../public/Images/Banners/mainBanner-2-Mobail.png';
+import banner2Tablet from './Images/Banners/mainBanner-2-Tablet.png';
+import banner2Mobail from './Images/Banners/mainBanner-2-Mobail.png';
 
-import banner3Tablet from '../../public/Images/Banners/mainBanner-3-Tablet.png';
-import banner3Mobail from '../../public/Images/Banners/mainBanner-3-Mobail.png';
+import banner3Tablet from './Images/Banners/mainBanner-3-Tablet.png';
+import banner3Mobail from './Images/Banners/mainBanner-3-Mobail.png';
 
-import banner4Tablet from '../../public/Images/Banners/mainBanner-4-Tablet.png';
-import banner4Mobail from '../../public/Images/Banners/mainBanner-4-Mobail.png';
+import banner4Tablet from './Images/Banners/mainBanner-4-Tablet.png';
+import banner4Mobail from './Images/Banners/mainBanner-4-Mobail.png';
 
-import banner5Tablet from '../../public/Images/Banners/mainBanner-5-Tablet.png';
-import banner5Mobail from '../../public/Images/Banners/mainBanner-5-Mobail.png';
+import banner5Tablet from './Images/Banners/mainBanner-5-Tablet.png';
+import banner5Mobail from './Images/Banners/mainBanner-5-Mobail.png';
 
 
 

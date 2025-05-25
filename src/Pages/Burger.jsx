@@ -16,9 +16,9 @@ import { AddToCart } from '../Slice/DishSlice';
 import { AddToWishList } from '../Slice/DishSlice';
 import { useDispatch } from 'react-redux';
 
-import cardBgImag from '../../public/Images/cardBgImg.jpeg'
-import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.png'
-import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.png'
+import cardBgImag from './Images/cardBgImg.jpeg'
+import popularDishesShape1_1 from './Images/dishes2/popularDishesShape1_1.png'
+import popularDishesShape1_2 from './Images/dishes2/popularDishesShape1_2.png'
 import { useNavigate } from "react-router-dom";
 const Burger = () => {
     const [dishes, setDishes] = useState([]);

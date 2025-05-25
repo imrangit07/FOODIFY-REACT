@@ -6,14 +6,14 @@ import { IoMdHeart } from "react-icons/io";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import '../CSS/ItemsCard.css';
-import cardBgImag from '../../public/Images/cardBgImg.jpeg'
+import cardBgImag from './Images/cardBgImg.jpeg'
 import { AddToCart } from '../Slice/DishSlice';
 import { AddToWishList } from '../Slice/DishSlice';
 import { useDispatch } from 'react-redux';
 
 import React from 'react';
-import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.png'
-import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.png'
+import popularDishesShape1_1 from './Images/dishes2/popularDishesShape1_1.png'
+import popularDishesShape1_2 from './Images/dishes2/popularDishesShape1_2.png'
 
 import { FaArrowRight } from "react-icons/fa";
 
