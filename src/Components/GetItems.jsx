@@ -17,7 +17,7 @@ import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShap
 
 import { FaArrowRight } from "react-icons/fa";
 
-import Details from '../Pages/details';
+import Details from '../Pages/Details';
 import { reactHooksModule } from '@reduxjs/toolkit/query/react';
 const GetItems = () => {
   const [dishes, setDishes] = useState([]);
