@@ -133,8 +133,8 @@ const LoginSignup = ({ successLogin }) => {
                                 style={{
                                     cursor: "pointer",
                                     color: "blue",
-                                    textDecoration: "none",  
-                                    transition: "text-decoration 0.3s ease"  
+                                    textDecoration: "none",
+                                    transition: "text-decoration 0.3s ease"
                                 }}
                                 onMouseEnter={(e) => e.currentTarget.style.textDecoration = "underline"}
                                 onMouseLeave={(e) => e.currentTarget.style.textDecoration = "none"}
@@ -150,13 +150,15 @@ const LoginSignup = ({ successLogin }) => {
                             <p>or continue with</p>
                             <div className="social-icons">
                                 <div className="social-icon">
-                                    <FaFacebook color="#3b5998" size={20} />
+                                    <a href="https://www.facebook.com/login.php" target='_blanck' >
+                                        <FaFacebook color="#3b5998" size={20} />
+                                    </a>
                                 </div>
                                 <div className="social-icon">
-                                    <FaGoogle color="#db4437" size={20} />
+                                    <a href="https://www.google.com/" target='_blanck'><FaGoogle color="#db4437" size={20} /></a>
                                 </div>
                                 <div className="social-icon">
-                                    <FaTwitter color="#1da1f2" size={20} />
+                                    <a href="https://x.com/login" target='_blanck'><FaTwitter color="#1da1f2" size={20} /></a>
                                 </div>
                             </div>
                         </div>
@@ -209,13 +211,15 @@ const LoginSignup = ({ successLogin }) => {
                             <p>or sign up with</p>
                             <div className="social-icons">
                                 <div className="social-icon">
-                                    <FaFacebook color="#3b5998" size={20} />
+                                    <a href="https://www.facebook.com/login.php" target='_blanck' >
+                                        <FaFacebook color="#3b5998" size={20} />
+                                    </a>
                                 </div>
                                 <div className="social-icon">
-                                    <FaGoogle color="#db4437" size={20} />
+                                    <a href="https://www.google.com/" target='_blanck'><FaGoogle color="#db4437" size={20} /></a>
                                 </div>
                                 <div className="social-icon">
-                                    <FaTwitter color="#1da1f2" size={20} />
+                                    <a href="https://x.com/login" target='_blanck'><FaTwitter color="#1da1f2" size={20} /></a>
                                 </div>
                             </div>
                         </div>
