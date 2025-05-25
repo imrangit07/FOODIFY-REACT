@@ -2,7 +2,7 @@ import { MdClose } from "react-icons/md";
 import '../CSS/Details.css';
 import { MdAdd } from "react-icons/md";
 import { TiMinus } from "react-icons/ti";
-import circleImg from './Images/dishes2/circleShape.png';
+import circleImg from '../../public/Images/dishes2/circleShape.png';
 
 import { TiSocialFacebook } from "react-icons/ti";
 import { FaYoutube } from "react-icons/fa";

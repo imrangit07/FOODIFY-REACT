@@ -1,10 +1,10 @@
 import '../CSS/Offer.css'
 import { FaArrowRight } from "react-icons/fa";
 
-import ThumbImg from "./Images/dishes2/ctaThumb1_1.png"
-import ctaShape1 from "./Images/dishes2/ctaShape1_1.png"
-import ctaShape2 from "./Images/dishes2/ctaShape1_2.png"
-import ctaShape3 from "./Images/dishes2/ctaShape1_3.png"
+import ThumbImg from "../../public/Images/dishes2/ctaThumb1_1.png"
+import ctaShape1 from "../../public/Images/dishes2/ctaShape1_1.png"
+import ctaShape2 from "../../public/Images/dishes2/ctaShape1_2.png"
+import ctaShape3 from "../../public/Images/dishes2/ctaShape1_3.png"
 const Offer = () => {
     return (
         <div className="offer-section">

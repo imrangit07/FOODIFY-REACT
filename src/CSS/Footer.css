@@ -186,10 +186,30 @@
     .footer-container {
       grid-template-columns: 1fr;
       margin-left: 10px;
+      text-align: center;
     }
     
     .legal-links {
       flex-direction: column;
       gap: 5px;
     }
+    .footer-section ul {
+      /* text-align: center; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .footer-section h3::after {
+   left: 50%;
+   font: 50%;
+   transform: translate(-50%,-50%);
+  
+}
+.logo-container {
+    justify-content: center;
+}
+.social-icons {
+  justify-content: center;
+}
   }

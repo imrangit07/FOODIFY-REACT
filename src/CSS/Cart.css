@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-*{
-    font-family: "Poppins", sans-serif;
+
+* {
+  font-family: "Poppins", sans-serif;
 }
+
 .cart-container {
   width: 800px;
   margin: 10rem auto 2rem;
@@ -242,14 +244,16 @@
   color: #d90b22;
   margin-top: 10px;
 }
-.checkout-box{
+
+.checkout-box {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: end;
   /* background-color: red; */
 }
-.checkout-box button{
+
+.checkout-box button {
   font-size: 1.4rem;
   padding: 15px 25px;
   letter-spacing: 1px;
@@ -355,6 +359,11 @@
   .quantity-display {
     padding-left: 0px;
   }
+
+  .item-details,
+  .item-controls {
+    padding-right: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -387,3 +396,9 @@
     font-size: 1.3rem;
   }
 }
+
+/* @media (max-width: 400px) {
+  .cart-container {
+    margin-top: rem;
+  }
+} */

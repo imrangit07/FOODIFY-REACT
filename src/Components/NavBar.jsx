@@ -1,6 +1,6 @@
 import '../CSS/NavBar.css';
 import { Link } from 'react-router-dom';
-import Logo from './Images/Logos/Foodify-1.mp4';
+import Logo from '../../public/Images/Logos/Foodify-1.mp4';
 import { FaRegUser, FaRegHeart } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsCart } from "react-icons/bs";
