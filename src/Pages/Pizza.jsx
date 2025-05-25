@@ -4,7 +4,7 @@ import '../CSS/ItemsCard.css';
 import dbPath from '../Config/DbPath';
 import axios from "axios";
 
-import Details from "./details";
+import Details from "./Details";
 
 import { AddToCart } from '../Slice/DishSlice';
 import { AddToWishList } from '../Slice/DishSlice';
