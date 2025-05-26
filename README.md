@@ -1,12 +1,18 @@
-# React + Vite
+FOODIFY – Modern Food Delivery Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TastyExpress is a fully responsive food delivery platform built using React, Redux Toolkit, and external CSS, offering a seamless and intuitive user experience across all devices. Designed with performance and scalability in mind, it allows users to effortlessly explore dishes, manage orders, and enjoy a smooth checkout flow.
 
-Currently, two official plugins are available:
+Why TastyExpress?
+🍽️ Intuitive UI – Clean and modern interface for effortless food discovery
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+⚛️ Powered by React + Redux Toolkit – Efficient state management and scalable architecture
 
-## Expanding the ESLint configuration
+📱 Responsive Design – Optimized layout for mobile, tablet, and desktop screens
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🚀 Fast & Lightweight – Built for performance with modular, reusable components
+
+🎨 Custom Styling – External CSS for fine-grained visual control and polished aesthetics
+
+🛒 Core Features – Browse menus, view dish details, add to cart, and complete orders with ease
+
+![image alt](public/Home.png)
