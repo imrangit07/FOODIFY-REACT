@@ -1,6 +1,6 @@
 import React from 'react';
 import '../CSS/Footer.css'; 
-import FooterLogo from '../../public//Images/Logos/FooterLogo.png'
+import FooterLogo from '../../public//Images/Logos/FooterLogo.webp'
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
 import { MdDeliveryDining, MdPayment } from 'react-icons/md';
 import { BsTelephoneFill, BsShieldLock } from 'react-icons/bs';

@@ -1,8 +1,8 @@
 import React from 'react';
 import '../CSS/Chef.css';
-import chefImage1 from '../../public/Images/Chef/ChefeThumb1_1.png'
-import chefImage2 from '../../public/Images/Chef/ChefeThumb1_2.png'
-import chefImage3 from '../../public/Images/Chef/ChefeThumb1_3.png'
+import chefImage1 from '../../public/Images/Chef/ChefeThumb1_1.webp'
+import chefImage2 from '../../public/Images/Chef/ChefeThumb1_2.webp'
+import chefImage3 from '../../public/Images/Chef/ChefeThumb1_3.webp'
 
 const chefs = [
     { name: "Ralph Edwards", role: "Chef Lead", image: chefImage1 },

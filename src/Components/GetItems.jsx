@@ -6,14 +6,13 @@ import { IoMdHeart } from "react-icons/io";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import '../CSS/ItemsCard.css';
-import cardBgImag from '../../public/Images/cardBgImg.jpeg'
+import cardBgImag from '../../public/Images/cardBgImg.webp'
 import { AddToCart } from '../Slice/DishSlice';
 import { AddToWishList } from '../Slice/DishSlice';
 import { useDispatch } from 'react-redux';
-
 import React from 'react';
-import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.png'
-import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.png'
+import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.webp'
+import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.webp'
 
 import { FaArrowRight } from "react-icons/fa";
 
@@ -33,6 +32,7 @@ const GetItems = () => {
   const LoadItems = async () => {
     try {
       const res = await axios.get(dbPath);
+      
       setDishes(res.data);
     } catch (error) {
       console.log(error);

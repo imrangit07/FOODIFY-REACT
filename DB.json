@@ -6,9 +6,9 @@
       "price": 250.99,
       "discount": 30,
       "discription": "A flavorful mix of long-grain rice stir-fried with tender chicken, fresh vegetables, soy sauce, and aromatic spices. Perfectly balanced for a satisfying and savory Asian-style meal everyone will enjoy.",
-      "image": "Images/dishes1/dishes1_1.png",
+      "image": "Images/dishes1/dishes1_1.webp",
       "stock": 24,
-      "catagory": "chicken"
+      "category": "chicken"
     },
     {
       "id": "2",
@@ -16,9 +16,9 @@
       "price": 149.99,
       "discount": 30,
       "discription": "Fusion-style pasta tossed in a bold and spicy Chinese sauce, featuring garlic, chili, and crisp vegetables. A unique and delicious twist on traditional noodles that brings East and West together.",
-      "image": "Images/dishes1/dishes1_2.png",
+      "image": "Images/dishes1/dishes1_2.webp",
       "stock": 18,
-      "catagory": "pizza"
+      "category": "pizza"
     },
     {
       "id": "3",
@@ -26,9 +26,9 @@
       "price": 299.99,
       "discount": 60,
       "discription": "A classic pizza loaded with grilled chicken, melted mozzarella cheese, tangy tomato sauce, and Italian herbs. This crispy crust pizza is a perfect combination of comfort, flavor, and satisfaction.",
-      "image": "Images/dishes1/dishes1_3.png",
+      "image": "Images/dishes1/dishes1_3.webp",
       "stock": 27,
-      "catagory": "pizza"
+      "category": "pizza"
     },
     {
       "id": "4",
@@ -36,9 +36,9 @@
       "price": 499.00,
       "discount": 30,
       "discription": "Savory noodles stir-fried with marinated chicken, bell peppers, onions, and a flavorful blend of Asian sauces. A hearty and satisfying dish packed with bold, mouthwatering flavor and texture.",
-      "image": "Images/dishes1/dishes1_4.png",
+      "image": "Images/dishes1/dishes1_4.webp",
       "stock": 12,
-      "catagory": "chicken"
+      "category": "chicken"
     },
     {
       "id": "5",
@@ -46,9 +46,9 @@
       "price": 350.99,
       "discount": 50,
       "discription": "Tender chicken breast grilled to perfection and seasoned with a smoky spice blend. Served juicy and hot, this high-protein option is both healthy and delicious for any meal of the day.",
-      "image": "Images/dishes1/dishes1_5.png",
+      "image": "Images/dishes1/dishes1_5.webp",
       "stock": 30,
-      "catagory": "chicken"
+      "category": "chicken"
     },
     {
       "id": "6",
@@ -56,9 +56,9 @@
       "price": 200.99,
       "discount": 30,
       "discription": "Succulent chicken pieces cooked in a sweet and tangy apricot glaze, creating a rich and flavorful dish. The perfect balance of fruitiness and savory spices makes it a unique experience.",
-      "image": "Images/dishes1/dishes1_6.png",
+      "image": "Images/dishes1/dishes1_6.webp",
       "stock": 9,
-      "catagory": "pizza"
+      "category": "pizza"
     },
     {
       "id": "7",
@@ -66,9 +66,9 @@
       "price": 399.99,
       "discount": 30,
       "discription": "A juicy grilled chicken patty nestled in a toasted bun with lettuce, tomato, cheese, and creamy mayo. This satisfying burger is packed with flavor, crunch, and a touch of spice.",
-      "image": "Images/dishes1/dishes1_7.png",
+      "image": "Images/dishes1/dishes1_7.webp",
       "stock": 21,
-      "catagory": "burger"
+      "category": "burger"
     },
     {
       "id": "8",
@@ -76,9 +76,9 @@
       "price": 250.99,
       "discount": 30,
       "discription": "Stacked high with crispy bacon, melted cheese, and a beef patty, this burger delivers a rich and smoky taste in every bite. Served on a fluffy bun with signature sauce.",
-      "image": "Images/dishes1/dishes1_8.png",
+      "image": "Images/dishes1/dishes1_8.webp",
       "stock": 11,
-      "catagory": "burger"
+      "category": "burger"
     },
     {
       "id": "9",
@@ -86,9 +86,9 @@
       "price": 299.99,
       "discount": 30,
       "discription": "A decadent dish made with rich butter, melted cheese, herbs, and spices. Smooth, creamy, and savory—this comforting recipe is perfect for dipping, topping, or enjoying as a side treat.",
-      "image": "Images/dishes1/dishes1_9.png",
+      "image": "Images/dishes1/dishes1_9.webp",
       "stock": 6,
-      "catagory": "burger"
+      "category": "burger"
     },
     {
       "id": "1",
@@ -96,9 +96,9 @@
       "price": 250.99,
       "discount": 30,
       "discription": "Crafted with authentic Italian flavors, this dish blends herbs, tomato, garlic, and olive oil for a truly rustic experience. A flavorful journey to Italy on your plate with every bite.",
-      "image": "Images/dishes1/dishes1_10.png",
+      "image": "Images/dishes1/dishes1_10.webp",
       "stock": 16,
-      "catagory": "pizza"
+      "category": "pizza"
     }
   ]
 }

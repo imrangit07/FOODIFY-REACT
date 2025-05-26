@@ -16,9 +16,9 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
 
-import cardBgImag from '../../public/Images/cardBgImg.jpeg'
-import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.png'
-import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.png'
+import cardBgImag from '../../public/Images/cardBgImg.webp'
+import popularDishesShape1_1 from '../../public/Images/dishes2/popularDishesShape1_1.webp'
+import popularDishesShape1_2 from '../../public/Images/dishes2/popularDishesShape1_2.webp'
 import { useNavigate } from "react-router-dom";
 const Pizza = () => {
   const [dishes, setDishes] = useState([]);
@@ -33,7 +33,7 @@ const Pizza = () => {
 
   const LoadItems = async () => {
     try {
-      const res = await axios.get(`${dbPath}/?catagory=pizza`);
+      const res = await axios.get(`${dbPath}/?category=pizza`);
       setDishes(res.data);
     } catch (error) {
       console.log(error);

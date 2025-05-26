@@ -395,10 +395,8 @@
   .empty-wishlist p:first-child {
     font-size: 1.3rem;
   }
+  .cart-container {
+    margin-top: 10rem;
+  }
 }
 
-/* @media (max-width: 400px) {
-  .cart-container {
-    margin-top: rem;
-  }
-} */

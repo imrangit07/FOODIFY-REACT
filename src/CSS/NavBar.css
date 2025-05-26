@@ -285,15 +285,16 @@ a {
   .nav-search--input {
     top: 5.5rem;
   }
-  .nav-search--input  {
+  /* .nav-search--input  {
         display: none;
-    }
+    } */
     .all-menu--itmes{
-  /* background-color: red; */
+  
   flex-wrap: wrap;
-  width: 30%;
+  width: 35%;
   right: 0px;
   top:47px;
+  flex-direction: column;
 }
 }
 @media (max-width:400px) {
